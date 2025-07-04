@@ -183,6 +183,23 @@ docker push your-username/image-name
 
 `docker rmi IMAGE_ID`
 
+## Delete All Containers
+
+`docker rm -f $(docker ps -aq)`
+
+- -f forcefully stops and removes running containers.
+
+- $(docker ps -aq) grabs all container IDs.
+
+## Delete All Images
+
+`docker rmi -f $(docker images -q)`
+
+- -f forces removal even if containers depend on the image.
+
+- $(docker images -q) pulls all image IDs.
+
+
 ## Summary
 
 ### These basic Docker commands provide a foundation for working with containers.  Understanding how to run, list, stop, pull, push, and manage Docker images  is crucial for effective containerization and orchestration.  
